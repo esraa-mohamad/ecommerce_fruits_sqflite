@@ -15,4 +15,5 @@ class ColorManager{
   static const Color lumber = Color(0xffFFE3C9);
   static const Color cosmicLatte = Color(0xffFFFAEB);
   static const Color antiFlashWhite = Color(0xffF1EFF6);
+  static const Color darkCharcoal = Color(0xff333333);
 }

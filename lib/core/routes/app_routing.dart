@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/features/details/screen/ui/details_screen.dart';
 import 'package:ecommerce_fruits/features/home/manager/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,8 @@ class AppRouting {
                     ..getAllFruitsData(),
                   child: const HomeEcommerceScreen(),
                 ));
+      case Routes.detailsScreen:
+        return MaterialPageRoute(builder: (_) => const DetailsScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

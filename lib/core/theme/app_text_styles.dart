@@ -73,4 +73,21 @@ class AppTextStyles{
     color: Colors.black
   );
 
+  static const TextStyle font16NavyBlueRegular =  TextStyle(
+    fontSize: 16 ,
+    fontWeight: FontWeightHelper.regular ,
+    color: ColorManager.navyBlue ,
+  );
+  static const TextStyle font32NavyBlueMedium =  TextStyle(
+    fontSize: 32 ,
+    fontWeight: FontWeightHelper.medium ,
+    color: ColorManager.navyBlue ,
+  );
+
+  static const TextStyle font14NavyBlueRegular =  TextStyle(
+    fontSize: 14 ,
+    fontWeight: FontWeightHelper.regular ,
+    color: ColorManager.navyBlue ,
+  );
+
 }

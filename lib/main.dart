@@ -15,7 +15,7 @@ class EcommerceFruits extends StatelessWidget {
     return   MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: appRouting.generateRoutes,
-      initialRoute: Routes.splashScreen,
+      initialRoute: Routes.detailsScreen,
     );
   }
 }
