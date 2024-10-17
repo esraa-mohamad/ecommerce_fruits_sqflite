@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/widgets/go_back_button.dart';
 import 'fruits_combo_item_details.dart';
@@ -8,21 +9,22 @@ class DetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return  SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: 20 ,
-                left: 24
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: 20.h ,
+                  left: 24.r
+                ),
+                child: const GoBackButton(),
               ),
-              child: GoBackButton(),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            FruitsComboItemDetails(),
+            const Expanded(
+              flex: 10,
+                child: FruitsComboItemDetails()),
           ],
         ),
     );

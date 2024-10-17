@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../theme/app_text_styles.dart';
@@ -14,8 +15,8 @@ void errorDialog(BuildContext context, String error) {
       elevation: 1.5,
       backgroundColor: Colors.white,
       child: Container(
-        width: 400,
-        height: 300,
+        width: 400.w,
+        height: 300.h,
         decoration: BoxDecoration(
             color: Colors.white,
             shape: BoxShape.rectangle,
@@ -28,16 +29,16 @@ void errorDialog(BuildContext context, String error) {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Lottie.asset('assets/lottie/error.json', width: 200, height: 150),
-            const SizedBox(
-              height: 15,
+            Lottie.asset('assets/lottie/error.json', width: 200.w, height: 150.h),
+             SizedBox(
+              height: 15.h,
             ),
             Text(error, style: AppTextStyles.font16OrangeSemiBold),
-            const SizedBox(
-              height: 15,
+             SizedBox(
+              height: 15.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              padding:  EdgeInsets.symmetric(horizontal: 12.w),
               child: SizedBox(
                 width: double.infinity,
                 child: TextButton(
@@ -46,15 +47,15 @@ void errorDialog(BuildContext context, String error) {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     backgroundColor: ColorManager.coolGrey,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 25,
+                    padding:  EdgeInsets.symmetric(
+                      horizontal: 25.w,
                     ),
                   ),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child:
-                      const Text('Retry', style: AppTextStyles.font16OrangeSemiBold),
+                       Text('Retry', style: AppTextStyles.font16OrangeSemiBold),
                 ),
               ),
             ),

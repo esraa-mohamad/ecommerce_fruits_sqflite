@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -14,26 +15,26 @@ class WelcomeMessages extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child:  Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 24
+          padding:  EdgeInsets.symmetric(
+            horizontal: 24.w,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Get The Freshest Salad Fruits Combo',
+               Text(
+                'Get The Freshest Fruits Salad Combo',
                 style: AppTextStyles.font20NavyBlueMedium,
               ),
-              const SizedBox(
-                height: 8,
+               SizedBox(
+                height: 8.h,
               ),
-              const Text(
+               Text(
                 'We deliver the best and freshest fruit salad in town. Order for a combo today!!!',
                 style: AppTextStyles.font16PurpleNavyRegular,
               ),
-              const SizedBox(
-                height: 58,
+               SizedBox(
+                height: 58.h,
               ),
               Center(
                 child: SizedBox(
@@ -43,9 +44,9 @@ class WelcomeMessages extends StatelessWidget {
                         Navigator.of(context).pushReplacementNamed(Routes.authenticationScreen);
                       },
                     radius: 10,
-                    paddingButton: const EdgeInsets.symmetric(
-                      horizontal: 118,
-                      vertical: 14
+                    paddingButton:  EdgeInsets.symmetric(
+                      horizontal: 110.w,
+                      vertical: 14.h
                     ),
                     backgroundColor: ColorManager.mainOrange,
                     textButton: 'Let\'s Continue',

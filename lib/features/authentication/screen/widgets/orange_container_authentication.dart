@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/theme/color_manager.dart';
@@ -22,20 +23,20 @@ class OrangeContainerAuthentication extends StatelessWidget {
           children: [
             Image.asset(
               'assets/images/authentication_image.png',
-              width: 301,
-              height: 260,
+              width: 301.w,
+              height: 260.h,
             ),
             Positioned(
-              bottom: 55,
+              bottom: 55.h,
               child: SvgPicture.asset('assets/svg/authentication_shadow.svg'),
             ),
             Positioned(
-              top: 50,
-              right: 50,
+              top: 50.h,
+              right: 50.r,
               child: SvgPicture.asset(
                 'assets/svg/small_fruits.svg',
-                width: 50,
-                height: 40,
+                width: 50.w,
+                height: 40.h,
               ),
             ),
           ],

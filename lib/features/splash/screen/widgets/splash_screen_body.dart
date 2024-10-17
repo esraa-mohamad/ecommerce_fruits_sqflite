@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/routes/routes.dart';
 
@@ -36,8 +37,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
       child: Center(
         child: Image.asset(
           'assets/images/splash_image.png',
-          width: 200,
-          height: 205,
+          width: 200.w,
+          height: 205.h,
         ),
       ),
     );

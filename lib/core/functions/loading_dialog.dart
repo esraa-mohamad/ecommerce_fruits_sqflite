@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 
@@ -13,8 +14,8 @@ void loadingDialog(BuildContext context) {
         elevation: 1.5,
         backgroundColor: Colors.white,
         child: Container(
-          width: 400,
-          height: 300,
+          width: 400.w,
+          height: 300.h,
           decoration: BoxDecoration(
               color: Colors.white,
               shape: BoxShape.rectangle,
@@ -26,7 +27,7 @@ void loadingDialog(BuildContext context) {
                     blurRadius: 3),
               ]),
           child: Center(
-            child: Lottie.asset('assets/lottie/loading.json', width: 250, height: 250 ),
+            child: Lottie.asset('assets/lottie/loading.json', width: 250.w, height: 250.h ),
           ),
         ),
       ));

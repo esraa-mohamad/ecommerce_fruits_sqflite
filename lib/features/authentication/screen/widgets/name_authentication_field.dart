@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 import '../../../../../core/theme/app_text_styles.dart';
@@ -16,21 +17,21 @@ class NameAuthenticationField extends StatelessWidget {
     var cubit = context.read<AuthenticationCubit>();
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding:  EdgeInsets.symmetric(horizontal: 24.w),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 100,
+               SizedBox(
+                height: 100.h,
               ),
-              const Text(
+               Text(
                 'What\'s your firstname ?',
                 style: AppTextStyles.font20NavyBlueMedium,
               ),
-              const SizedBox(
-                height: 23,
+               SizedBox(
+                height: 23.h,
               ),
               Form(
                 key: cubit.formKey,
@@ -48,8 +49,8 @@ class NameAuthenticationField extends StatelessWidget {
                         return null;
                         },
                     ),
-                    const SizedBox(
-                      height: 42,
+                     SizedBox(
+                      height: 42.w,
                     ),
                     Center(
                       child: SizedBox(
@@ -60,9 +61,10 @@ class NameAuthenticationField extends StatelessWidget {
                           },
                           radius: 10,
                           paddingButton:
-                              const EdgeInsets.symmetric(
-                                  horizontal: 118
-                                  , vertical: 14),
+                               EdgeInsets.symmetric(
+                                  horizontal: 118.w
+                                  , vertical: 14.h ,
+                               ),
                           backgroundColor: ColorManager.mainOrange,
                           textButton: 'Start Order',
                           styleTextButton: AppTextStyles.font16WhiteMedium,

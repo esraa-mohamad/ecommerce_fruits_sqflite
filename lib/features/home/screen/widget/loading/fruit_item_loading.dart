@@ -1,5 +1,6 @@
 import 'package:ecommerce_fruits/core/theme/color_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class FruitItemLoading extends StatelessWidget {
@@ -11,7 +12,7 @@ class FruitItemLoading extends StatelessWidget {
         baseColor: ColorManager.grayX,
         highlightColor: ColorManager.coolGrey,
         child: Container(
-          width: 152,
+          width: 152.w,
           decoration: BoxDecoration(
             color: ColorManager.grayX ,
             borderRadius: BorderRadius.circular(20),
@@ -22,8 +23,8 @@ class FruitItemLoading extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    width: 20,
-                    height: 20,
+                    width: 20.w,
+                    height: 20.h,
                     color: ColorManager.coolGrey,
                   ),
                 ],
@@ -32,23 +33,23 @@ class FruitItemLoading extends StatelessWidget {
                 backgroundColor: ColorManager.coolGrey,
                 radius: 80,
               ),
-              const SizedBox(
-                height: 8,
+               SizedBox(
+                height: 8.h,
               ),
               Container(
-                height: 10,
-                width: 50,
+                height: 10.h,
+                width: 50.w,
                 color: ColorManager.coolGrey,
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    height: 5,
-                    width: 30,
+                    height: 5.h,
+                    width: 30.w,
                     color: ColorManager.coolGrey,
                   ),
                   const CircleAvatar(

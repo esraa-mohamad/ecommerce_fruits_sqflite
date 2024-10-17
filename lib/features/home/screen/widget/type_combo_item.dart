@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 
@@ -21,8 +22,8 @@ class TypeComboItem extends StatelessWidget {
             style: style ?? AppTextStyles.font16CoolGreyMedium,
           ),
           Container(
-            width: 30,
-            height: 2,
+            width: 30.w,
+            height: 2.h,
             color: color ?? Colors.white,
           ),
         ],

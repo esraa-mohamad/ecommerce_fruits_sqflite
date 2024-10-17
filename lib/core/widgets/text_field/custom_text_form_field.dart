@@ -1,5 +1,6 @@
 import 'package:ecommerce_fruits/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theme/color_manager.dart';
 
@@ -61,7 +62,7 @@ class CustomTextFormField extends StatelessWidget {
           prefixIcon: prefixIcon,
           isDense: true,
           contentPadding: contentPadding ??
-              const EdgeInsets.symmetric(horizontal: 14, vertical: 16),
+               EdgeInsets.symmetric(horizontal: 14.w, vertical: 16.h),
           filled: true,
           fillColor: fillBackgroundColor ?? const Color(0xffD0D0D0),
           border: border ??
