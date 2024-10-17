@@ -1,5 +1,6 @@
 import 'package:ecommerce_fruits/features/details/screen/ui/details_screen.dart';
 import 'package:ecommerce_fruits/features/home/manager/home_cubit.dart';
+import 'package:ecommerce_fruits/features/my_basket/screen/ui/my_basket_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/authentication/manager/authentication_cubit.dart';
@@ -36,6 +37,8 @@ class AppRouting {
                 ));
       case Routes.detailsScreen:
         return MaterialPageRoute(builder: (_) => const DetailsScreen());
+      case Routes.myBasketScreen:
+        return MaterialPageRoute(builder: (_) => const MyBasketScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

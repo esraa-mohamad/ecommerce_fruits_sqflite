@@ -1,4 +1,5 @@
 import 'package:ecommerce_fruits/core/theme/app_text_styles.dart';
+import 'package:ecommerce_fruits/core/theme/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,7 +32,7 @@ class CustomElevatedButton extends StatelessWidget {
           padding: paddingButton ??
               EdgeInsets.symmetric(
                   horizontal: horizontalPadding ?? 140.w, vertical: 14.h),
-          backgroundColor: backgroundColor ?? const Color(0xff916BBF),
+          backgroundColor: backgroundColor ??  ColorManager.mainOrange,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius ?? 25),
           )),

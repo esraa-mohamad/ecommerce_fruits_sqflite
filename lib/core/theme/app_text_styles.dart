@@ -30,7 +30,7 @@ class AppTextStyles{
     color: ColorManager.grayX ,
   );
   static  TextStyle font16OrangeSemiBold =  TextStyle(
-    fontSize: 15.sp ,
+    fontSize: 16.sp ,
     fontWeight: FontWeightHelper.semiBold ,
     color: ColorManager.mainOrange ,
   );
@@ -91,4 +91,26 @@ class AppTextStyles{
     color: ColorManager.navyBlue ,
   );
 
+  static  TextStyle font24WhiteMedium =  TextStyle(
+    fontSize: 24.sp ,
+    fontWeight: FontWeightHelper.medium ,
+    color: Colors.white ,
+  );
+  static  TextStyle font16BlackMedium =  TextStyle(
+    fontSize: 16.sp ,
+    fontWeight: FontWeightHelper.medium ,
+    color: Colors.black ,
+  );
+
+  static  TextStyle font14BlackRegular =  TextStyle(
+    fontSize: 14.sp ,
+    fontWeight: FontWeightHelper.regular ,
+    color: Colors.black ,
+  );
+
+  static  TextStyle font16OrangeMedium =  TextStyle(
+    fontSize: 16.sp ,
+    fontWeight: FontWeightHelper.medium ,
+    color: ColorManager.mainOrange ,
+  );
 }
