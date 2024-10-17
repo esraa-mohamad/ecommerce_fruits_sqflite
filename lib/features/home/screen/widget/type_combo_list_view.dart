@@ -1,4 +1,6 @@
+import 'package:ecommerce_fruits/features/home/manager/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../core/theme/color_manager.dart';
@@ -12,7 +14,7 @@ class TypeComboListView extends StatefulWidget {
 }
 
 class _TypeComboListViewState extends State<TypeComboListView> {
-  final List titles = ['Hottest' , 'Popular' , 'New Compo' , 'Tpp'];
+  final List titles = ['Hottest' , 'Popular' , 'New Combo' , 'Top'];
 
   int selectedIndex =0;
 
@@ -32,7 +34,8 @@ class _TypeComboListViewState extends State<TypeComboListView> {
               title: titles[index],
             color: selectedIndex == index ? ColorManager.mainOrange : Colors.white ,
             onTap: (){
-                setState(() {
+              context.read<HomeCubit>().getFruitsDataUsingType(titles[index]);
+              setState(() {
                   selectedIndex = index;
                 });
             },

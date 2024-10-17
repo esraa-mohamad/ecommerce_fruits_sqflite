@@ -1,28 +1,25 @@
-import 'package:flutter/cupertino.dart';
+import 'package:ecommerce_fruits/core/models/fruits_combo_model/fruit_combo_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/theme/color_manager.dart';
-class RecommendedComboItems extends StatelessWidget {
-  const RecommendedComboItems({super.key});
 
+class FruitsComboItems extends StatelessWidget {
+  const FruitsComboItems({super.key, required this.fruitComboModel});
+
+  final FruitComboModel fruitComboModel;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 152,
-      padding: const EdgeInsets.symmetric(
+      width: 180,
+      padding:  const EdgeInsets.symmetric(
         horizontal: 16,
-        vertical: 5,
       ),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: fruitComboModel.color,
           borderRadius: BorderRadius.circular(20),
-          boxShadow: const [
-            BoxShadow(
-                color: ColorManager.grayX,
-                blurRadius: 150
-            ),
-          ]),
+         ),
       child: Column(
         children: [
           Row(
@@ -39,30 +36,35 @@ class RecommendedComboItems extends StatelessWidget {
             ],
           ),
           Image.asset(
-            'assets/images/compo_image.png',
+            fruitComboModel.imagePath,
             width: 80,
             height: 80,
           ),
           const SizedBox(
             height: 8,
           ),
-          const Text(
-            'Honey lime combo',
+           Text(
+            fruitComboModel.fruitName,
             textAlign: TextAlign.center,
             style: AppTextStyles.font16NavyBlueMedium,
           ),
           const SizedBox(
             height: 10,
           ),
-           Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(CupertinoIcons.money_yen ,
-                  size: 14,color: ColorManager.mainOrange,),
-                  Text(
-                    '2,000',
+                  // Icon(CupertinoIcons.money_yen ,
+                  // size: 14,color: ColorManager.mainOrange,),
+                  SvgPicture.asset(
+                    'assets/svg/money_icon.svg',
+                    width: 14,
+                    height: 14,
+                  ),
+                   Text(
+                    ' ${fruitComboModel.price}',
                     textAlign: TextAlign.center,
                     style: AppTextStyles.font14OrangeRegular,
                   ),
@@ -70,10 +72,13 @@ class RecommendedComboItems extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24),
-                  color: ColorManager.oldLace
+                    borderRadius: BorderRadius.circular(24),
+                    color: ColorManager.oldLace),
+                child: const Icon(
+                  Icons.add,
+                  size: 24,
+                  color: ColorManager.mainOrange,
                 ),
-                child:const Icon(Icons.add ,size: 24,color: ColorManager.mainOrange,),
               ),
             ],
           )

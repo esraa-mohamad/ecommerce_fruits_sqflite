@@ -12,4 +12,7 @@ class ColorManager{
   static const Color cultured = Color(0xffF3F4F9);
   static const Color coolGrey = Color(0xff938DB5);
   static const Color oldLace = Color(0xffFFF2E7);
+  static const Color lumber = Color(0xffFFE3C9);
+  static const Color cosmicLatte = Color(0xffFFFAEB);
+  static const Color antiFlashWhite = Color(0xffF1EFF6);
 }

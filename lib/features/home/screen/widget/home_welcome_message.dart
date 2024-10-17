@@ -4,13 +4,14 @@ import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/theme/font_weight_helper.dart';
 
 class HomeWelcomeMessage extends StatelessWidget {
-  const HomeWelcomeMessage({super.key});
+  const HomeWelcomeMessage({super.key, required this.name});
 
+  final String name ;
   @override
   Widget build(BuildContext context) {
     return RichText(
         text: TextSpan(
-          text: 'Hello Tony, ',
+          text: 'Hello $name, ',
           style: AppTextStyles.font20NavyBlueMedium,
           children: [
             TextSpan(

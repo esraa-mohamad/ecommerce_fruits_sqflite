@@ -7,14 +7,15 @@ import '../../../core/helper/local_database/ecommerce_database.dart';
 import 'authentication_state.dart';
 
 class AuthenticationCubit extends Cubit<AuthenticationState> {
-  AuthenticationCubit() : super(AuthenticationInitial());
+  AuthenticationCubit() : super(AuthenticationInitial()){
+   _createData();
+  }
 
   EcommerceDatabase ecommerceDatabase = EcommerceDatabase.instance;
   var formKey = GlobalKey<FormState>();
   TextEditingController namController = TextEditingController();
-  initialize(){}
 
-  void createData()async{
+  void _createData()async{
     await ecommerceDatabase.database;
     emit(AuthenticationCreateDatabase());
   }
