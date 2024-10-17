@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/core/routes/routes.dart';
 import 'package:ecommerce_fruits/core/theme/app_text_styles.dart';
 import 'package:ecommerce_fruits/core/theme/color_manager.dart';
 import 'package:ecommerce_fruits/core/widgets/text_field/custom_text_form_field.dart';
@@ -57,7 +58,9 @@ class PaymentSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.of(context).pushReplacementNamed(Routes.orderCompleteScreen);
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 16.w, vertical: 16.h),
@@ -74,7 +77,9 @@ class PaymentSheet extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.of(context).pushReplacementNamed(Routes.orderCompleteScreen);
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 16.w, vertical: 16.h),
