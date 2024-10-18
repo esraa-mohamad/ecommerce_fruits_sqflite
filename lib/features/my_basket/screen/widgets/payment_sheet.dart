@@ -2,6 +2,7 @@ import 'package:ecommerce_fruits/core/routes/routes.dart';
 import 'package:ecommerce_fruits/core/theme/app_text_styles.dart';
 import 'package:ecommerce_fruits/core/theme/color_manager.dart';
 import 'package:ecommerce_fruits/core/widgets/text_field/custom_text_form_field.dart';
+import 'package:ecommerce_fruits/features/my_basket/screen/widgets/card_payment_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -78,7 +79,13 @@ class PaymentSheet extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: (){
-                          Navigator.of(context).pushReplacementNamed(Routes.orderCompleteScreen);
+                          Navigator.of(context).pop(); // Close the current bottom sheet
+                          showModalBottomSheet(
+                            context: context,
+                            backgroundColor: Colors.transparent,
+                            isScrollControlled: true, // Allows the modal to take full height
+                            builder: (context) => const CardPaymentSheet(),
+                          );
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(
