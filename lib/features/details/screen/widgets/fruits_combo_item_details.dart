@@ -199,7 +199,7 @@ class FruitsComboItemDetails extends StatelessWidget {
                         styleTextButton: AppTextStyles.font16WhiteMedium,
                         backgroundColor: ColorManager.mainOrange,
                         paddingButton:  EdgeInsets.symmetric(
-                            horizontal: 58.w ,
+                            horizontal: 50.w ,
                             vertical: 14.h
                         ),
                       ),

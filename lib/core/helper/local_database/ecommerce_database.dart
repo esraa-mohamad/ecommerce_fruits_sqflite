@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:sqflite/sqflite.dart';
 
 import '../../models/fruits_combo_model/fruit_combo_model.dart';
@@ -16,6 +18,7 @@ class EcommerceDatabase {
       'ecommerce.db',
       version: 2,
       onCreate: _onCreate,
+      onUpgrade: _onUpgrade,
     );
     return _database!;
   }
@@ -24,23 +27,31 @@ class EcommerceDatabase {
   Future<void> _onCreate(Database db, int version) async {
     // create table authentication
     await db.execute("""
-      CREATE TABLE Authentication (
+      CREATE TABLE IF NOT EXISTS Authentication (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL
       )
     """);
 
     await db.execute("""
-      CREATE TABLE Fruits (
+      CREATE TABLE IF NOT EXISTS Fruits (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         imagePath TEXT NOT NULL,
         type TEXT NOT NULL,
-        price int NOT NULL,
-        color int NOT NULL
+        price INTEGER NOT NULL,
+        color INTEGER NOT NULL
       )
     """);
   }
+
+  Future<void> _onUpgrade(Database db , int oldVersion , int newVersion)async{
+    if(oldVersion < newVersion){
+      await _onCreate(db, newVersion);
+    }
+  }
+
+
 
   // insert into table authentication
   Future<void> insertNameAuthentication(String name) async {
@@ -61,6 +72,7 @@ class EcommerceDatabase {
         limit: 1,
 
     );
+    log("Name database : ${result.first['name']}");
     return result.first['name'] as String ;
   }
 

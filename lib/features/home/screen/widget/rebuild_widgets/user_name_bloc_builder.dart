@@ -1,7 +1,7 @@
-import 'package:ecommerce_fruits/core/functions/custom_snack_bar.dart';
-import 'package:ecommerce_fruits/core/theme/color_manager.dart';
-import 'package:ecommerce_fruits/features/home/manager/home_cubit.dart';
-import 'package:ecommerce_fruits/features/home/manager/home_state.dart';
+import 'dart:developer';
+
+import 'package:ecommerce_fruits/features/home/manager/name_authentication_cubit/home_name_authentication_cubit.dart';
+import 'package:ecommerce_fruits/features/home/manager/name_authentication_cubit/home_name_authentication_state.dart';
 import 'package:ecommerce_fruits/features/home/screen/widget/home_welcome_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,22 +11,16 @@ class UserNameBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<HomeCubit, HomeState>(
-      listener: (context, state) {
-        if (state is HomeCreateDatabase) {
-          showSnackBar(
-            context: context,
-            message: 'Logged In',
-            backgroundColor: ColorManager.mainOrange,
-          );
-        }
-      },
+    return BlocBuilder<HomeNameAuthenticationCubit, HomeNameAuthenticationState>(
       builder: (context, state) {
-        if (state is HomeGetUserNameSuccess) {
+        if (state is HomeNameAuthenticationSuccess) {
+          log("name bloc : ${state.name}");
           return getUserName(state.name);
-        } else if (state is HomeGetUserNameFailed) {
+        } else if (state is HomeNameAuthenticationFailed) {
+          log("name bloc : ${state.error.toString()}");
           return getUserName(state.error);
         } else {
+          log('Nothing');
           return getUserName('No name');
         }
       },

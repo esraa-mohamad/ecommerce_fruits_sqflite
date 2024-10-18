@@ -1,9 +1,9 @@
 import 'package:ecommerce_fruits/features/home/screen/widget/rebuild_widgets/recommended_fruits_combo_list_bloc_builder.dart';
-import 'package:ecommerce_fruits/features/home/screen/widget/type_tab_bar.dart';
+import 'package:ecommerce_fruits/features/home/screen/widget/get_data_using_type/type_tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theme/app_text_styles.dart';
-import 'home_search.dart';
+import 'get_data_using_type/home_search.dart';
 import 'home_tob_bar.dart';
 import 'rebuild_widgets/type_fruits_combo_list_bloc_builder.dart';
 import 'rebuild_widgets/user_name_bloc_builder.dart';
@@ -57,7 +57,7 @@ class _HomeEcommerceBodyState extends State<HomeEcommerceBody> {
             SizedBox(
               height: 42.h,
             ),
-             TypeTabBar(),
+             const TypeTabBar(),
             SizedBox(
               height: 20.h,
             ),

@@ -16,19 +16,19 @@ class AuthenticationBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationCubit , AuthenticationState>(
         listenWhen: (context, state) =>
-        state is AuthenticationCreateDatabase ||
             state is AuthenticationLoading ||
             state is AuthenticationInsertName ||
             state is AuthenticationFailed,
         listener: (context , state) {
-          if(state is AuthenticationCreateDatabase){
-            //showSnackBar(context: context, message: 'Data is created' , backgroundColor: ColorManager.mainOrange);
-          }
-          else if (state is AuthenticationLoading){
+          // if(state is AuthenticationCreateDatabase){
+          //   //showSnackBar(context: context, message: 'Data is created' , backgroundColor: ColorManager.mainOrange);
+          // }
+           if (state is AuthenticationLoading){
             loadingDialog(context);
           }else if(state is AuthenticationInsertName){
             Navigator.of(context).pop();
             Navigator.of(context).pushReplacementNamed(Routes.homeEcommerceScreen);
+            showSnackBar(context: context, message: 'Logged in' , backgroundColor: ColorManager.mainOrange);
           }else if(state is AuthenticationFailed){
             Navigator.of(context).pop();
             errorDialog(context, state.error);

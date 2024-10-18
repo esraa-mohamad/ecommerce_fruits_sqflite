@@ -1,8 +1,8 @@
-import 'package:ecommerce_fruits/features/home/screen/widget/type_fruit_combo_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/models/fruits_combo_model/fruit_combo_model.dart';
+import '../../../../../core/models/fruits_combo_model/fruit_combo_model.dart';
+import 'type_fruit_combo_item.dart';
 
 class TypesFruitsComboListView extends StatelessWidget {
   const TypesFruitsComboListView({super.key, required this.fruitsModel});

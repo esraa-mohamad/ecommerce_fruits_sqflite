@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/models/fruits_combo_model/fruit_combo_model.dart';
+import '../../../../../core/models/fruits_combo_model/fruit_combo_model.dart';
 import 'fruits_combo_items.dart';
 
 class FruitsComboItemsListView extends StatelessWidget {

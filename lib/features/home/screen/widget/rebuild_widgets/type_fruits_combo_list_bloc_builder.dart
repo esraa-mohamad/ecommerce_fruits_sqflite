@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../manager/home_cubit.dart';
-import '../../../manager/home_state.dart';
+import '../../../manager/type_fruit_cubit/home_type_fruit_cubit.dart';
+import '../../../manager/type_fruit_cubit/home_type_fruit_state.dart';
+import '../get_data_using_type/types_fruits_combo_list_view.dart';
+import '../get_error_message.dart';
 import '../loading/fruit_items_loading_list_view.dart';
-import '../types_fruits_combo_list_view.dart';
 
 class TypeFruitsComboListBlocBuilder extends StatelessWidget {
   const TypeFruitsComboListBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit , HomeState>(
+    return BlocBuilder<HomeTypeFruitCubit , HomeTypeFruitState>(
         builder: (context , state){
-          if(state is HomeLoadingGetDataUsingType){
+          if(state is HomeTypeFruitLoading){
             return const FruitItemsLoadingListView();
           }
-          else if(state is HomeGetFruitsComboUsingType){
-            return getFruitsList(state.fruitsCombo);
+          else if(state is HomeTypeFruitSuccess){
+            return getFruitsList(state.fruitsModel);
           }
-          else if(state is HomeFruitsComboError){
+          else if(state is HomeTypeFruitFailed){
             return getError(state.error);
           }else{
             return getError('Something Error');
@@ -34,22 +33,6 @@ class TypeFruitsComboListBlocBuilder extends StatelessWidget {
     return TypesFruitsComboListView(fruitsModel: fruitsModel);
   }
 
-  Widget getError(String error){
-    return Center(
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 18 ,
-          vertical: 12 ,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.red ,
-        ),
-        child: Center(
-          child: Text(error  , style: AppTextStyles.font16WhiteMedium,),
-        ),
-      ),
-    );
-  }
+
 
 }
