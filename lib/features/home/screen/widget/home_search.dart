@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../core/theme/color_manager.dart';
-import '../../../../../core/widgets/text_field/custom_text_form_field.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/theme/color_manager.dart';
+import '../../../../core/widgets/text_field/custom_text_form_field.dart';
 class HomeSearch extends StatelessWidget {
   const HomeSearch({super.key});
 

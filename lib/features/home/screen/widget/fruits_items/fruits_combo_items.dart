@@ -15,7 +15,7 @@ class FruitsComboItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.of(context).pushNamed(Routes.detailsScreen);
+        Navigator.of(context).pushNamed(Routes.detailsScreen , arguments: fruitComboModel.id);
       },
       child: Container(
         width: 180.w,

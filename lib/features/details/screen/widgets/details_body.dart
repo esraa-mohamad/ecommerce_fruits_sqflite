@@ -1,11 +1,14 @@
+import 'package:ecommerce_fruits/features/details/screen/widgets/fruits_combo_details_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/widgets/go_back_button.dart';
-import 'fruits_combo_item_details.dart';
+
+
 
 class DetailsBody extends StatelessWidget {
   const DetailsBody({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class DetailsBody extends StatelessWidget {
             ),
             const Expanded(
               flex: 10,
-                child: FruitsComboItemDetails()),
+                child: FruitsComboDetailsBlocBuilder()),
           ],
         ),
     );

@@ -14,8 +14,8 @@ class FruitItemLoading extends StatelessWidget {
         child: Container(
           width: 152.w,
           decoration: BoxDecoration(
-            color: ColorManager.grayX ,
-            borderRadius: BorderRadius.circular(20),
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
             children: [
@@ -31,7 +31,7 @@ class FruitItemLoading extends StatelessWidget {
               ),
               const CircleAvatar(
                 backgroundColor: ColorManager.coolGrey,
-                radius: 80,
+                radius: 50,
               ),
                SizedBox(
                 height: 8.h,

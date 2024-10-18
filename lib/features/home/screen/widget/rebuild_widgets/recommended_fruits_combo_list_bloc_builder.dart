@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../manager/all_fruit_cubit/home_all_fruit_cubit.dart';
 import '../../../manager/all_fruit_cubit/home_all_fruit_state.dart';
-import '../gat_all_data/fruits_combo_items_list_view.dart';
+import '../fruits_items/fruits_combo_items_list_view.dart';
 import '../get_error_message.dart';
 import '../loading/fruit_items_loading_list_view.dart';
 

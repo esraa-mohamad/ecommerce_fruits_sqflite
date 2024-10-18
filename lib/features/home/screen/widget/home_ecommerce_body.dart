@@ -1,9 +1,9 @@
 import 'package:ecommerce_fruits/features/home/screen/widget/rebuild_widgets/recommended_fruits_combo_list_bloc_builder.dart';
-import 'package:ecommerce_fruits/features/home/screen/widget/get_data_using_type/type_tab_bar.dart';
+import 'package:ecommerce_fruits/features/home/screen/widget/tab_bar_type/type_tab_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theme/app_text_styles.dart';
-import 'get_data_using_type/home_search.dart';
+import 'home_search.dart';
 import 'home_tob_bar.dart';
 import 'rebuild_widgets/type_fruits_combo_list_bloc_builder.dart';
 import 'rebuild_widgets/user_name_bloc_builder.dart';

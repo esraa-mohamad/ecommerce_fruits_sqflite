@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:sqflite/sqflite.dart';
 
@@ -37,16 +36,17 @@ class EcommerceDatabase {
       CREATE TABLE IF NOT EXISTS Fruits (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
+        description TEXT NOT NULL,
         imagePath TEXT NOT NULL,
         type TEXT NOT NULL,
         price INTEGER NOT NULL,
         color INTEGER NOT NULL
-      )
+        )
     """);
   }
 
   Future<void> _onUpgrade(Database db , int oldVersion , int newVersion)async{
-    if(oldVersion < newVersion){
+    if(oldVersion < 2){
       await _onCreate(db, newVersion);
     }
   }
@@ -72,7 +72,6 @@ class EcommerceDatabase {
         limit: 1,
 
     );
-    log("Name database : ${result.first['name']}");
     return result.first['name'] as String ;
   }
 
@@ -113,6 +112,16 @@ class EcommerceDatabase {
     List<FruitComboModel> fruits =
     fruitsData.map((fruit) => FruitComboModel.fromJson(fruit)).toList();
     return fruits;
+  }
+
+  // get data from fruits using id
+  Future<FruitComboModel> getFruitItemById(int id) async {
+    final db = await database;
+    List<Map<String, dynamic>> fruitsData = await db
+        .query('Fruits', where: 'id = ?', whereArgs: [id]);
+    List<FruitComboModel> fruits =
+    fruitsData.map((fruit) => FruitComboModel.fromJson(fruit)).toList();
+    return fruits.first;
   }
 
   // delete all data

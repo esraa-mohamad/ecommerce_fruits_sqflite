@@ -5,6 +5,8 @@ class FruitComboModel {
 
   final String fruitName;
 
+  final String description;
+
   final int price;
 
   final String imagePath;
@@ -16,6 +18,7 @@ class FruitComboModel {
   FruitComboModel({
     this.id,
     required this.fruitName,
+    required this.description,
     required this.price,
     required this.imagePath,
     required this.color,
@@ -26,6 +29,7 @@ class FruitComboModel {
     return {
       'id': id,
       'name': fruitName,
+      'description': description,
       'price': price,
       'imagePath': imagePath,
       'color': color.value,
@@ -37,6 +41,7 @@ class FruitComboModel {
     return FruitComboModel(
         id: map['id'],
         fruitName: map['name'],
+        description: map['description'],
         price: map['price'],
         imagePath: map['imagePath'],
         color: Color(map['color']),

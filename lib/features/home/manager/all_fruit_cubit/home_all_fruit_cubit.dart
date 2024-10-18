@@ -70,7 +70,7 @@ class HomeAllFruitCubit extends Cubit<HomeAllFruitState> {
   //insert all fruits
   Future<void> insertFruitsData()async{
     try {
-      //await ecommerceDatabase.deleteAllData();
+      // await ecommerceDatabase.deleteAllData();
       List<FruitComboModel> data = await ecommerceDatabase.getFruitsData();
       if(data.isNotEmpty){
         emit(HomeGetAllFruitsCombo(fruitsCombo: data));

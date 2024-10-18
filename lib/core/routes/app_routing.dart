@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/features/details/manager/details_cubit.dart';
 import 'package:ecommerce_fruits/features/details/screen/ui/details_screen.dart';
 import 'package:ecommerce_fruits/features/home/manager/all_fruit_cubit/home_all_fruit_cubit.dart';
 import 'package:ecommerce_fruits/features/home/manager/name_authentication_cubit/home_name_authentication_cubit.dart';
@@ -17,7 +18,7 @@ import 'routes.dart';
 
 class AppRouting {
   Route? generateRoutes(RouteSettings routesSettings) {
-    //final arguments = routesSettings.arguments;
+    final arguments = routesSettings.arguments;
     switch (routesSettings.name) {
       case Routes.splashScreen:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
@@ -31,23 +32,30 @@ class AppRouting {
                 ));
       case Routes.homeEcommerceScreen:
         return MaterialPageRoute(
-            builder: (_) =>  MultiBlocProvider(
-                providers:[
-                  BlocProvider(
-                      create: (context)=> HomeNameAuthenticationCubit()..getUserName(),
-                  ),
-                  BlocProvider(
-                    create: (context)=> HomeAllFruitCubit()..insertFruitsData(),
-                  ),
-                  BlocProvider(
-                      create: (context) => HomeTypeFruitCubit(),
-                  ),
-                ] ,
-                child: const HomeEcommerceScreen(),
-            ),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) =>
+                    HomeNameAuthenticationCubit()..getUserName(),
+              ),
+              BlocProvider(
+                create: (context) => HomeAllFruitCubit()..insertFruitsData(),
+              ),
+              BlocProvider(
+                create: (context) => HomeTypeFruitCubit(),
+              ),
+            ],
+            child: const HomeEcommerceScreen(),
+          ),
         );
       case Routes.detailsScreen:
-        return MaterialPageRoute(builder: (_) => const DetailsScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => DetailsCubit(),
+                  child: const DetailsScreen(),
+                ),
+          settings: RouteSettings(arguments: arguments),
+        );
       case Routes.myBasketScreen:
         return MaterialPageRoute(builder: (_) => const MyBasketScreen());
       case Routes.orderCompleteScreen:

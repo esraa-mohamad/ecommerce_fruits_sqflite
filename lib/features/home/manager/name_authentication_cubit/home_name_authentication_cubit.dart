@@ -1,6 +1,5 @@
 
 
-import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,10 +17,8 @@ class HomeNameAuthenticationCubit extends Cubit<HomeNameAuthenticationState> {
   try {
     String name =await ecommerceDatabase.getLastAuthenticationName();
     emit(HomeNameAuthenticationSuccess(name: name));
-    log("Name cubit : $name");
   } catch (error) {
     emit(HomeNameAuthenticationFailed(error: "No name : $error"));
-    log(error.toString());
   }
 }
 
