@@ -5,9 +5,10 @@ import '../theme/app_text_styles.dart';
 import '../theme/color_manager.dart';
 
 class GoBackButton extends StatelessWidget {
-  const GoBackButton({super.key});
+  const GoBackButton({super.key, this.onTap});
 
-  @override
+  final void Function()? onTap;
+@override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){

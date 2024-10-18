@@ -17,4 +17,6 @@ class ColorManager{
   static const Color antiFlashWhite = Color(0xffF1EFF6);
   static const Color darkCharcoal = Color(0xff333333);
   static const Color cetaceanBlue = Color(0xff070648);
+  static const Color lavenderBlush = Color(0xffFEF0F0);
+  static const Color mintCream = Color(0xffF0FEF8);
 }

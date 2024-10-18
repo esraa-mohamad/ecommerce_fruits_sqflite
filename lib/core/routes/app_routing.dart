@@ -2,6 +2,7 @@ import 'package:ecommerce_fruits/features/details/screen/ui/details_screen.dart'
 import 'package:ecommerce_fruits/features/home/manager/home_cubit.dart';
 import 'package:ecommerce_fruits/features/my_basket/screen/ui/my_basket_screen.dart';
 import 'package:ecommerce_fruits/features/order_complete/screen/ui/order_complete_screen.dart';
+import 'package:ecommerce_fruits/features/track_order/screen/ui/track_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/authentication/manager/authentication_cubit.dart';
@@ -42,6 +43,8 @@ class AppRouting {
         return MaterialPageRoute(builder: (_) => const MyBasketScreen());
         case Routes.orderCompleteScreen:
         return MaterialPageRoute(builder: (_) => const OrderCompleteScreen());
+        case Routes.trackOrderScreen:
+        return MaterialPageRoute(builder: (_) => const TrackOrderScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

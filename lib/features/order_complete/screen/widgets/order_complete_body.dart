@@ -45,7 +45,7 @@ class OrderCompleteBody extends StatelessWidget {
             ),
             CustomElevatedButton(
                 onPressed: () {
-
+                  Navigator.of(context).pushReplacementNamed(Routes.trackOrderScreen);
                 },
                 textButton: 'Track order',
               radius: 10,
