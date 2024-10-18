@@ -27,7 +27,7 @@ class UserNameBlocBuilder extends StatelessWidget {
         } else if (state is HomeGetUserNameFailed) {
           return getUserName(state.error);
         } else {
-          return const SizedBox.shrink();
+          return getUserName('No name');
         }
       },
     );

@@ -22,7 +22,7 @@ class AuthenticationBlocListener extends StatelessWidget {
             state is AuthenticationFailed,
         listener: (context , state) {
           if(state is AuthenticationCreateDatabase){
-            showSnackBar(context: context, message: 'Data is created' , backgroundColor: ColorManager.mainOrange);
+            //showSnackBar(context: context, message: 'Data is created' , backgroundColor: ColorManager.mainOrange);
           }
           else if (state is AuthenticationLoading){
             loadingDialog(context);
