@@ -28,7 +28,9 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      clipBehavior: Clip.none,
       style: ElevatedButton.styleFrom(
+          elevation: 0,
           padding: paddingButton ??
               EdgeInsets.symmetric(
                   horizontal: horizontalPadding ?? 140.w, vertical: 14.h),

@@ -15,5 +15,13 @@ class DetailsDataFailure extends DetailsState {
 
   DetailsDataFailure({required this.error});
 }
+class DetailsInsertBasketOrderSuccessLoading extends DetailsState {}
+class DetailsInsertBasketOrderSuccess extends DetailsState {}
+class DetailsInsertBasketOrderFailed extends DetailsState {
+  final String error ;
+
+  DetailsInsertBasketOrderFailed({required this.error});
+}
+
 
 

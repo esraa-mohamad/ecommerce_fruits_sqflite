@@ -4,6 +4,8 @@ import 'package:ecommerce_fruits/core/widgets/go_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/routes/routes.dart';
+
 class BasketTopBar extends StatelessWidget {
   const BasketTopBar({super.key});
 
@@ -17,7 +19,11 @@ class BasketTopBar extends StatelessWidget {
         color: ColorManager.mainOrange,
         child:  Row(
           children: [
-            const GoBackButton(),
+             GoBackButton(
+              onTap: (){
+                Navigator.of(context).pushReplacementNamed(Routes.homeEcommerceScreen);
+              },
+            ),
             SizedBox(
               width: 34.w,
             ),

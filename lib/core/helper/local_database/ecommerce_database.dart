@@ -1,4 +1,4 @@
-
+import 'package:ecommerce_fruits/core/models/basket_order_model/basket_order_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../models/fruits_combo_model/fruit_combo_model.dart';
@@ -15,7 +15,7 @@ class EcommerceDatabase {
     // Initialize the database if it's not already
     _database = await openDatabase(
       'ecommerce.db',
-      version: 2,
+      version: 3,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -43,15 +43,23 @@ class EcommerceDatabase {
         color INTEGER NOT NULL
         )
     """);
+
+    await db.execute("""
+      CREATE TABLE IF NOT EXISTS Basket (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        imagePath TEXT NOT NULL,
+        numOfOrder INTEGER NOT NULL,
+        totalPrice INTEGER NOT NULL
+        )
+    """);
   }
 
-  Future<void> _onUpgrade(Database db , int oldVersion , int newVersion)async{
-    if(oldVersion < 2){
+  Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < newVersion) {
       await _onCreate(db, newVersion);
     }
   }
-
-
 
   // insert into table authentication
   Future<void> insertNameAuthentication(String name) async {
@@ -63,18 +71,17 @@ class EcommerceDatabase {
     );
   }
 
+  //get last name from table authentication
   Future<String> getLastAuthenticationName() async {
     final db = await database;
     List<Map<String, dynamic>> result = await db.query(
-        'Authentication',
-        orderBy: 'id DESC',
-        // this return number of row , so I want last row (order by id desc) with last name added
-        limit: 1,
-
+      'Authentication',
+      orderBy: 'id DESC',
+      // this return number of row , so I want last row (order by id desc) with last name added
+      limit: 1,
     );
-    return result.first['name'] as String ;
+    return result.first['name'] as String;
   }
-
 
   // insert into table fruits
   Future<void> insertInFruitsTable(FruitComboModel fruitModelCompo) async {
@@ -107,21 +114,55 @@ class EcommerceDatabase {
   // search fruits using name
   Future<List<FruitComboModel>> getSearchFruits(String name) async {
     final db = await database;
-    List<Map<String, dynamic>> fruitsData = await db
-        .query('Fruits', where: 'LOWER(name) LIKE LOWER(?)', whereArgs: ['%$name%']);
+    List<Map<String, dynamic>> fruitsData = await db.query('Fruits',
+        where: 'LOWER(name) LIKE LOWER(?)', whereArgs: ['%$name%']);
     List<FruitComboModel> fruits =
-    fruitsData.map((fruit) => FruitComboModel.fromJson(fruit)).toList();
+        fruitsData.map((fruit) => FruitComboModel.fromJson(fruit)).toList();
     return fruits;
   }
 
   // get data from fruits using id
   Future<FruitComboModel> getFruitItemById(int id) async {
     final db = await database;
-    List<Map<String, dynamic>> fruitsData = await db
-        .query('Fruits', where: 'id = ?', whereArgs: [id]);
+    List<Map<String, dynamic>> fruitsData =
+        await db.query('Fruits', where: 'id = ?', whereArgs: [id]);
     List<FruitComboModel> fruits =
-    fruitsData.map((fruit) => FruitComboModel.fromJson(fruit)).toList();
+        fruitsData.map((fruit) => FruitComboModel.fromJson(fruit)).toList();
     return fruits.first;
+  }
+
+  // insert into table basket
+  Future<void> insertInBasketTable({
+    required String name,
+    required String imagePath,
+    required int numOfOrder,
+    required int totalPrice,
+  }) async {
+    final db = await database; // Ensure database is initialized
+    await db.insert(
+      'Basket',
+      {
+        'name': name,
+        'imagePath': imagePath,
+        'numOfOrder': numOfOrder,
+        'totalPrice': totalPrice
+      }, // Handles duplicates
+    );
+  }
+
+  // get from table basket
+  Future<List<BasketOrderModel>> getBasketOrders() async {
+    final db = await database;
+    List<Map<String, dynamic>> basketOrder = await db.query('Basket');
+    List<BasketOrderModel> orders =
+        basketOrder.map((order) => BasketOrderModel.fromJson(order)).toList();
+    return orders;
+  }
+
+  // delete order from list by id
+  Future<void> deleteOrderById(int id) async {
+    final db = await database;
+    await db.delete('Basket', where: 'id = ? ', whereArgs: [id]);
   }
 
   // delete all data

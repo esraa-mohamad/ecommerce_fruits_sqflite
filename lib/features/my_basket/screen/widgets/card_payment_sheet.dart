@@ -112,7 +112,7 @@ class CardPaymentSheet extends StatelessWidget {
                     vertical: 16.h,
                     horizontal: 100.w
                   ),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20),
                       topLeft: Radius.circular(20),

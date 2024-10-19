@@ -38,4 +38,19 @@ class DetailsCubit extends Cubit<DetailsState> {
       emit(DetailsDataSuccess(fruitComboModel: currentFruitComboModel!, numOfOrder: numOfOrder));
     }
   }
+
+  Future<void> insertNewOrder({
+    required String name ,
+    required String imagePath ,
+    required int numOfOrder ,
+    required int totalPrice ,
+})async{
+    emit(DetailsInsertBasketOrderSuccessLoading());
+    try{
+      await ecommerceDatabase.insertInBasketTable(name: name, imagePath: imagePath, numOfOrder: numOfOrder, totalPrice: totalPrice);
+      emit(DetailsInsertBasketOrderSuccess());
+    }catch(error){
+      emit(DetailsInsertBasketOrderFailed(error: "Error in insert data ${error.toString()}"));
+    }
+  }
 }
