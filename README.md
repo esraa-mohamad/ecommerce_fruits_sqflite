@@ -17,17 +17,18 @@ __ the only logic that doesn't handeled  , is payment , as it is defacult using 
 ## Screens
 ###  Splash
 
-![splash](https://github.com/user-attachments/assets/87ac039f-fe73-4748-a531-7502c2ab86a5)
+  ![splash](https://github.com/user-attachments/assets/87ac039f-fe73-4748-a531-7502c2ab86a5)
 
 ### Welcome
 
-![welcome](https://github.com/user-attachments/assets/cd2b3ced-04d6-41a9-9f24-7ffdeb938466)
+  ![welcome](https://github.com/user-attachments/assets/cd2b3ced-04d6-41a9-9f24-7ffdeb938466)
 
 ### Authentication
 _ That have ui before and after write name in text feild
 - Authentication UI
   
   ![authentication](https://github.com/user-attachments/assets/a071c3a9-5e34-48b4-807d-3ed8889b3819)
+  
 - After name
   
   ![authentication_name](https://github.com/user-attachments/assets/4c0d2d52-eaf8-4701-a474-6379e36f01b2)
@@ -45,14 +46,17 @@ _ Start when logged in , show all fruits data , and data asthier type ans search
   ![home_search](https://github.com/user-attachments/assets/e55c021a-1566-42b2-b61f-9ed2b70e7b08)
 
 ### Details 
-![details](https://github.com/user-attachments/assets/f55e83f2-96fa-4610-a08a-164a37a595ac)
+
+  ![details](https://github.com/user-attachments/assets/f55e83f2-96fa-4610-a08a-164a37a595ac)
 
 ### My Basket 
 _ That has data afer adding to order from detatils ui or empty if delete all order or no order yet 
 - Empty
   
   ![embty_basket](https://github.com/user-attachments/assets/f49dc38f-dddf-414a-baeb-c636f1a32944)
+  
 - With Data
+  
   ![basket](https://github.com/user-attachments/assets/2014e304-f272-41d2-a450-608f0ef9e6db)
 
 ### Checkout payment sheet 
