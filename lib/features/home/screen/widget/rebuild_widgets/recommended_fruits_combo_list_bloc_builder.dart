@@ -29,7 +29,7 @@ class RecommendedFruitsCombListBlocBuilder extends StatelessWidget {
           else if(state is HomeFruitsComboError){
             return getError(state.error);
           }else{
-            return getError('Something Error');
+            return const SizedBox.shrink();
           }
 
         },

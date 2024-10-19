@@ -22,7 +22,7 @@ class TypeFruitsComboListBlocBuilder extends StatelessWidget {
           else if(state is HomeTypeFruitFailed){
             return getError(state.error);
           }else{
-            return getError('Something Error');
+            return const SizedBox.shrink();
           }
 
         }

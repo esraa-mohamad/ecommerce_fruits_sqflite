@@ -27,14 +27,14 @@ class OrangeContainerImage extends StatelessWidget {
               height: 260.h,
             ),
             Positioned(
-              bottom: 55.h,
+              bottom: 40.h,
               child: SvgPicture.asset('assets/svg/shadow_welcome_image.svg'),
             ),
             Positioned(
               top: 50.h,
               right: 50.r,
-              child: SvgPicture.asset(
-                'assets/svg/small_fruits.svg',
+              child: Image.asset(
+                'assets/images/small_fruits.png',
                 width: 50.w,
                 height: 40.h,
               ),

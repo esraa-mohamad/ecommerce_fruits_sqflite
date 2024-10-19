@@ -44,6 +44,11 @@ class EcommerceDatabase {
         )
     """);
 
+    /*
+    * Logically , this table should take id of authentication as foreign key
+    * to make data store and return depend on person log in id , not all
+    * person log in , but no time and work with local database is very hard
+    */
     await db.execute("""
       CREATE TABLE IF NOT EXISTS Basket (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -131,6 +136,9 @@ class EcommerceDatabase {
     return fruits.first;
   }
 
+  /*
+  * It should take id of user "that we say token with API"
+  */
   // insert into table basket
   Future<void> insertInBasketTable({
     required String name,
@@ -150,6 +158,9 @@ class EcommerceDatabase {
     );
   }
 
+  /*
+  * Also here , it should return by id of user not all basket order in table
+  */
   // get from table basket
   Future<List<BasketOrderModel>> getBasketOrders() async {
     final db = await database;

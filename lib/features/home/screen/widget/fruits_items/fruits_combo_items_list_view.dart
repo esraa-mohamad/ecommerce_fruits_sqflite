@@ -11,7 +11,7 @@ class FruitsComboItemsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 230.h,
+      height: 250.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
           itemCount: fruitsModel.length,
