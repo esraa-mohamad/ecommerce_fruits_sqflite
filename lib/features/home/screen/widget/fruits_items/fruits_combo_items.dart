@@ -7,15 +7,22 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/theme/color_manager.dart';
 
-class FruitsComboItems extends StatelessWidget {
+class FruitsComboItems extends StatefulWidget {
   const FruitsComboItems({super.key, required this.fruitComboModel});
 
   final FruitComboModel fruitComboModel;
+
+  @override
+  State<FruitsComboItems> createState() => _FruitsComboItemsState();
+}
+
+class _FruitsComboItemsState extends State<FruitsComboItems> {
+  bool isFav = false ;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.of(context).pushNamed(Routes.detailsScreen , arguments: fruitComboModel.id);
+        Navigator.of(context).pushNamed(Routes.detailsScreen , arguments: widget.fruitComboModel.id);
       },
       child: Container(
         width: 180.w,
@@ -23,7 +30,7 @@ class FruitsComboItems extends StatelessWidget {
           horizontal: 16.w,
         ),
         decoration: BoxDecoration(
-            color: fruitComboModel.color,
+            color: widget.fruitComboModel.color,
             borderRadius: BorderRadius.circular(20),
            ),
         child: Column(
@@ -32,8 +39,13 @@ class FruitsComboItems extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      isFav = !isFav;
+                    });
+                  },
                   icon:  Icon(
+                    isFav ? Icons.favorite:
                     Icons.favorite_border_outlined,
                     size: 20.sp,
                     color: ColorManager.mainOrange,
@@ -42,7 +54,7 @@ class FruitsComboItems extends StatelessWidget {
               ],
             ),
             Image.asset(
-              fruitComboModel.imagePath,
+              widget.fruitComboModel.imagePath,
               width: 80.w,
               height: 80.h,
             ),
@@ -50,7 +62,7 @@ class FruitsComboItems extends StatelessWidget {
               height: 8.h,
             ),
              Text(
-              fruitComboModel.fruitName,
+              widget.fruitComboModel.fruitName,
               textAlign: TextAlign.center,
               style: AppTextStyles.font16NavyBlueMedium,
             ),
@@ -68,7 +80,7 @@ class FruitsComboItems extends StatelessWidget {
                         height: 14.h,
                       ),
                        Text(
-                        ' ${fruitComboModel.price}',
+                        ' ${widget.fruitComboModel.price}',
                         textAlign: TextAlign.center,
                         style: AppTextStyles.font14OrangeRegular,
                       ),
