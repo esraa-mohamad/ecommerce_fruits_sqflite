@@ -2,7 +2,7 @@ import 'package:ecommerce_fruits/core/routes/routes.dart';
 import 'package:ecommerce_fruits/core/theme/app_text_styles.dart';
 import 'package:ecommerce_fruits/core/theme/color_manager.dart';
 import 'package:ecommerce_fruits/core/widgets/text_field/custom_text_form_field.dart';
-import 'package:ecommerce_fruits/features/my_basket/screen/widgets/card_payment_sheet.dart';
+import 'package:ecommerce_fruits/features/my_basket/screen/widgets/payment_sheet/card_payment_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/core/theme/color_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../theme/app_text_styles.dart';
@@ -10,7 +11,7 @@ void showSnackBar({required BuildContext context , required String message , Col
        shape: RoundedRectangleBorder(
          borderRadius: BorderRadius.circular(20) ,
        ),
-       backgroundColor:backgroundColor ?? const Color(0xff916BBF),
+       backgroundColor:backgroundColor ?? ColorManager.mainOrange,
       content: Text(message ,style: AppTextStyles.font16BlackSemiBold,)
       ),
   );

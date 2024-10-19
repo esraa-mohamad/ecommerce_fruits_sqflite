@@ -1,9 +1,9 @@
-import 'package:ecommerce_fruits/features/my_basket/screen/widgets/total_price_checkout.dart';
+import 'package:ecommerce_fruits/features/my_basket/screen/widgets/total_brice_checkout_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'basket_top_bar.dart';
-import 'my_basket_fruit_list_view.dart';
+import 'my_basket_orders_bloc_builder.dart';
 
 class MyBasketBody extends StatelessWidget {
   const MyBasketBody({super.key});
@@ -17,7 +17,7 @@ class MyBasketBody extends StatelessWidget {
           flex: 3,
           child: Padding(
             padding: EdgeInsets.only(left: 24.w, right: 24.r, top: 40.h,),
-            child: const MyBasketFruitListView(),
+            child: const MyBasketOrdersBlocBuilder(),
           ),
         ),
         Expanded(
@@ -26,7 +26,7 @@ class MyBasketBody extends StatelessWidget {
               horizontal: 24.w,
               vertical: 50.h
             ),
-            child: const TotalPriceCheckout(),
+            child: const TotalBriceCheckoutBlocBuilder()
           ),
         )
       ],

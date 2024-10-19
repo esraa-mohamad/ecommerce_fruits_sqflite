@@ -3,6 +3,7 @@ import 'package:ecommerce_fruits/features/details/screen/ui/details_screen.dart'
 import 'package:ecommerce_fruits/features/home/manager/all_fruit_cubit/home_all_fruit_cubit.dart';
 import 'package:ecommerce_fruits/features/home/manager/name_authentication_cubit/home_name_authentication_cubit.dart';
 import 'package:ecommerce_fruits/features/home/manager/type_fruit_cubit/home_type_fruit_cubit.dart';
+import 'package:ecommerce_fruits/features/my_basket/manager/my_basket_cubit.dart';
 import 'package:ecommerce_fruits/features/my_basket/screen/ui/my_basket_screen.dart';
 import 'package:ecommerce_fruits/features/order_complete/screen/ui/order_complete_screen.dart';
 import 'package:ecommerce_fruits/features/track_order/screen/ui/track_order_screen.dart';
@@ -50,14 +51,19 @@ class AppRouting {
         );
       case Routes.detailsScreen:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => DetailsCubit(),
-                  child: const DetailsScreen(),
-                ),
+          builder: (_) => BlocProvider(
+            create: (context) => DetailsCubit(),
+            child: const DetailsScreen(),
+          ),
           settings: RouteSettings(arguments: arguments),
         );
       case Routes.myBasketScreen:
-        return MaterialPageRoute(builder: (_) => const MyBasketScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => MyBasketCubit()..getAllBasketOrders(),
+                  child: const MyBasketScreen(),
+                ),
+        );
       case Routes.orderCompleteScreen:
         return MaterialPageRoute(builder: (_) => const OrderCompleteScreen());
       case Routes.trackOrderScreen:

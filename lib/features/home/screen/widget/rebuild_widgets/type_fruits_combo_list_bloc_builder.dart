@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../manager/type_fruit_cubit/home_type_fruit_cubit.dart';
 import '../../../manager/type_fruit_cubit/home_type_fruit_state.dart';
 import '../fruits_items/fruits_combo_items_list_view.dart';
-import '../get_error_message.dart';
+import '../../../../../core/widgets/get_error_message.dart';
 import '../loading/fruit_items_loading_list_view.dart';
 
 class TypeFruitsComboListBlocBuilder extends StatelessWidget {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../core/routes/routes.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/theme/color_manager.dart';
 
@@ -21,10 +22,15 @@ class HomeTobBar extends StatelessWidget {
         ),
         Column(
           children: [
-            Icon(
-              Icons.shopping_basket_outlined,
-              color: ColorManager.mainOrange,
-              size: 24.sp,
+            GestureDetector(
+              onTap: (){
+                Navigator.of(context).pushNamed(Routes.myBasketScreen);
+              },
+              child: Icon(
+                Icons.shopping_basket_outlined,
+                color: ColorManager.mainOrange,
+                size: 24.sp,
+              ),
             ),
             Text(
               'My Basket',
